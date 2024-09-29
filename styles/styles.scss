@@ -1,0 +1,154 @@
+@import 'reset';
+@import 'consts';
+@import 'mixins';
+
+:root {
+    font-family: "Outfit", sans-serif;
+    font-weight: 300;
+    font-size:  16px;
+    @media (min-width: 768px) {
+        font-size:  18px;
+    }
+}
+
+main {
+    background-color: $main-bg;
+
+    padding: 1.6rem;
+
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    background-color: $card-bg;
+
+    width: 100%;
+    max-width: 375px;
+
+    $card-padding: 1.5rem;
+    padding: $card-padding;
+
+    $card-border-radius: 1rem;
+    border-radius: $card-border-radius;
+
+    color: $soft-blue;
+
+    display: flex;
+    flex-direction: column;
+    gap: $card-padding;
+
+    box-shadow: 0px 30px 0px 20px rgba(darken($card-bg, 10%), 0.09);
+    @media (min-width: 768px) {
+        box-shadow: 0px 30px 0px 16px rgba(darken($card-bg, 10%), 0.09),
+                    0px 20px 0px 50px rgba(darken($card-bg, 10%), 0.08);
+
+    }
+
+
+    &__img_container {
+        overflow: hidden;
+        border-radius: .5rem;
+
+        width: 100%;
+        aspect-ratio: 1 / 1;
+
+        position: relative;
+        &::after {
+            content: url('/images/icon-view.svg');
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+                
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            opacity: 0;
+
+            transition: opacity 200ms ease;
+        }
+
+        &:hover {
+            cursor: pointer;
+
+            &::after {
+                opacity: 1;
+                background-color: rgba($cyan, .5);
+            }
+        }
+    }
+
+    &__img {
+        width: 100%;
+        object-fit: cover;
+    }
+
+    &__main {
+        border-bottom: 1px solid $line;
+        padding-bottom: $card-padding;
+        
+        display: flex;
+        flex-direction: column;
+        gap: $card-padding;
+    }
+
+    &__h1 {
+        font-weight: 500;
+    }
+
+    &__h1, &__author {
+        color: $white;
+
+        &:hover {
+            color: $cyan;
+            cursor: pointer;
+            transition: color 200ms ease-in;
+        }
+    }
+
+    &__info {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    
+
+    &__balance {
+        font-weight: 500;
+        color: $cyan;
+
+        @include add-icon('/images/icon-ethereum.svg');
+    }
+
+    &__time {
+        @include add-icon('/images/icon-clock.svg');
+    }
+
+    &__footer {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    &__avatar_container {
+        height: clamp(36px, 14vw , 48px);
+        aspect-ratio: 1 / 1;
+        margin-right: 1rem;
+
+        border-radius: 50%;
+        border: 1px solid $white;
+    }
+
+    &__avatar {
+        width: 100%;
+        object-fit: cover;
+    }
+}

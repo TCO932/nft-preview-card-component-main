@@ -1,0 +1,9 @@
+@mixin add-icon($url) {
+    position: relative;
+    &::before {
+        content: url($url);
+        position: relative;
+        top: 2px;
+        margin-right: 4px;
+    }
+}

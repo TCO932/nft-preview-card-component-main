@@ -4,7 +4,7 @@
   "description": "![Design preview for the NFT preview card component coding challenge](./design/desktop-preview.jpg)",
   "main": "index.js",
   "scripts": {
-    "start": "concurrently \"http-server -o\" \"sass --watch styles/styles.scss styles/styles.css\"",
+    "start": "concurrently \"live-server\" \"sass --watch styles/styles.scss styles/styles.css\"",
     "build": "sass --watch styles/styles.scss styles/styles.css",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -12,7 +12,7 @@
   "license": "ISC",
   "devDependencies": {
     "concurrently": "^9.0.1",
-    "http-server": "^14.1.1",
+    "live-server": "^1.2.0",
     "sass": "^1.79.3"
   }
 }
