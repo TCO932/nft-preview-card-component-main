@@ -59,7 +59,7 @@ main {
 
         position: relative;
         &::after {
-            content: url('/images/icon-view.svg');
+            content: url('../images/icon-view.svg');
             position: absolute;
             top: 0;
             right: 0;
@@ -125,11 +125,11 @@ main {
         font-weight: 500;
         color: $cyan;
 
-        @include add-icon('/images/icon-ethereum.svg');
+        @include add-icon('../images/icon-ethereum.svg');
     }
 
     &__time {
-        @include add-icon('/images/icon-clock.svg');
+        @include add-icon('../images/icon-clock.svg');
     }
 
     &__footer {

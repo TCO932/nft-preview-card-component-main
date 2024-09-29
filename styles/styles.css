@@ -75,7 +75,7 @@ main {
   position: relative;
 }
 .card__img_container::after {
-  content: url("/images/icon-view.svg");
+  content: url("../images/icon-view.svg");
   position: absolute;
   top: 0;
   right: 0;
@@ -127,7 +127,7 @@ main {
   position: relative;
 }
 .card__balance::before {
-  content: url("/images/icon-ethereum.svg");
+  content: url("../images/icon-ethereum.svg");
   position: relative;
   top: 2px;
   margin-right: 4px;
@@ -136,7 +136,7 @@ main {
   position: relative;
 }
 .card__time::before {
-  content: url("/images/icon-clock.svg");
+  content: url("../images/icon-clock.svg");
   position: relative;
   top: 2px;
   margin-right: 4px;
